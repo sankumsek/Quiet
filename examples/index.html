@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiet — component gallery</title>
+<link rel="stylesheet" href="../dist/quiet.css">
+<style>
+.g-layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: var(--space-8); max-width: 1280px; margin: 0 auto; padding: var(--space-8) var(--space-4); }
+.g-side { position: sticky; top: var(--space-8); align-self: start; display: flex; flex-direction: column; gap: 2px; max-height: calc(100vh - 64px); overflow: auto; }
+.g-side a { font: 400 15px/20px var(--font-sans); color: var(--ink-secondary); text-decoration: none; padding: 4px 10px; border-radius: var(--radius-sm); }
+.g-side a:hover { color: var(--ink); background: var(--surface-sunken); }
+.g-navgroup { margin: var(--space-4) 0 var(--space-1); padding-inline: 10px; font: 600 13px/18px var(--font-sans); color: var(--ink-secondary); }
+.g-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: var(--space-4); margin-bottom: var(--space-8); }
+.g-top h1 { margin: 0; }
+.g-top p { margin: var(--space-2) 0 0; color: var(--ink-secondary); max-width: 52ch; }
+.g-section { padding-block: var(--space-8); border-top: 1px solid var(--separator); }
+.g-head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-4); }
+.g-head h2 { margin: 0; font: 600 22px/28px var(--font-sans); letter-spacing: -0.015em; }
+.g-head a { font: 500 15px/20px var(--font-sans); }
+.g-summary { margin: var(--space-2) 0 var(--space-4); font: 400 15px/21px var(--font-sans); color: var(--ink-secondary); max-width: 70ch; }
+.g-demo { border-radius: var(--radius-lg); background: var(--bg); box-shadow: 0 0 0 1px var(--separator); overflow: hidden; }
+@media (max-width: 800px) { .g-layout { grid-template-columns: 1fr; } .g-side { display: none; } }
+/* SystemColors */
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;padding:16px}
+.c{display:flex;align-items:center;gap:8px;font:400 15px/20px var(--font-sans);color:var(--ink)}
+.c i{width:28px;height:28px;border-radius:var(--radius-sm);flex:none}
+/* Materials */
+.stage{position:relative;margin:16px;height:224px;border-radius:var(--radius-lg);overflow:hidden;background:var(--bg)}
+.blob{position:absolute;border-radius:999px}
+.b1{width:200px;height:200px;left:-30px;top:-40px;background:var(--system-orange)}
+.b2{width:180px;height:180px;left:200px;top:70px;background:var(--system-blue)}
+.b3{width:160px;height:160px;left:420px;top:-30px;background:var(--system-pink)}
+.b4{width:200px;height:200px;left:600px;top:60px;background:var(--system-green)}
+.panes{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:24px}
+.pane{border-radius:var(--radius-md);padding:16px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:var(--shadow-1)}
+.pane b{font:600 17px/22px var(--font-sans);letter-spacing:-0.01em}
+.pane span{font:400 13px/18px var(--font-sans);color:var(--ink-secondary)}
+</style>
+</head>
+<body>
+<div class="g-layout">
+  <nav class="g-side" aria-label="Components">
+    <a href="#top" style="font-weight:600;color:var(--ink)">Quiet</a>
+    <p class="g-navgroup">Foundations</p>
+    <a href="#SystemColors">SystemColors</a>
+    <a href="#Materials">Materials</a>
+    <p class="g-navgroup">Controls</p>
+    <a href="#Button">Button</a>
+    <a href="#TextField">TextField</a>
+    <a href="#Toggle">Toggle</a>
+    <a href="#SegmentedControl">SegmentedControl</a>
+    <a href="#ListGroup">ListGroup</a>
+    <p class="g-navgroup">Site</p>
+    <a href="#SiteHeader">SiteHeader</a>
+    <a href="#SiteFooter">SiteFooter</a>
+    <p class="g-navgroup">Article</p>
+    <a href="#ArticleHeader">ArticleHeader</a>
+    <a href="#Prose">Prose</a>
+    <a href="#CodeBlock">CodeBlock</a>
+    <a href="#Figure">Figure</a>
+    <a href="#Callout">Callout</a>
+    <a href="#TableOfContents">TableOfContents</a>
+    <p class="g-navgroup">Discovery</p>
+    <a href="#Tag">Tag</a>
+    <a href="#PostCard">PostCard</a>
+    <a href="#PostList">PostList</a>
+    <p class="g-navgroup">Engagement</p>
+    <a href="#AuthorBio">AuthorBio</a>
+    <a href="#PrevNext">PrevNext</a>
+    <a href="#Newsletter">Newsletter</a>
+  </nav>
+  <main id="top">
+    <div class="g-top">
+      <div>
+        <h1 class="q-large-title">Components</h1>
+        <p>Every Quiet component, rendered from <code class="q-code">dist/quiet.css</code>. Switch themes to check both.</p>
+      </div>
+      <div class="q-seg" role="group" aria-label="Theme" id="theme">
+        <button type="button" data-set="">System</button>
+        <button type="button" data-set="light">Light</button>
+        <button type="button" data-set="dark">Dark</button>
+      </div>
+    </div>
+<section class="g-section" id="SystemColors">
+  <div class="g-head"><h2>SystemColors</h2><a class="q-link" href="../docs/components/SystemColors.md">Guidelines</a></div>
+  <p class="g-summary">Twelve content colours, matching Apple's system palette in both themes, for giving things identity rather than interactivity.</p>
+  <div class="g-demo">
+<div class="grid">
+    <div class="c"><i style="background:var(--system-red)"></i><span>Red</span></div>
+    <div class="c"><i style="background:var(--system-orange)"></i><span>Orange</span></div>
+    <div class="c"><i style="background:var(--system-yellow)"></i><span>Yellow</span></div>
+    <div class="c"><i style="background:var(--system-green)"></i><span>Green</span></div>
+    <div class="c"><i style="background:var(--system-mint)"></i><span>Mint</span></div>
+    <div class="c"><i style="background:var(--system-teal)"></i><span>Teal</span></div>
+    <div class="c"><i style="background:var(--system-cyan)"></i><span>Cyan</span></div>
+    <div class="c"><i style="background:var(--system-blue)"></i><span>Blue</span></div>
+    <div class="c"><i style="background:var(--system-indigo)"></i><span>Indigo</span></div>
+    <div class="c"><i style="background:var(--system-purple)"></i><span>Purple</span></div>
+    <div class="c"><i style="background:var(--system-pink)"></i><span>Pink</span></div>
+    <div class="c"><i style="background:var(--system-brown)"></i><span>Brown</span></div>
+</div>
+  </div>
+</section>
+<section class="g-section" id="Materials">
+  <div class="g-head"><h2>Materials</h2><a class="q-link" href="../docs/components/Materials.md">Guidelines</a></div>
+  <p class="g-summary">Translucent surfaces that blur and tint whatever scrolls behind them, for bars, sidebars, menus and sheets.</p>
+  <div class="g-demo">
+<div class="stage">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div>
+  <div class="panes">
+    <div class="pane q-material q-material--ultrathin"><b>Ultrathin</b><span>Overlays on media</span></div>
+    <div class="pane q-material q-material--thin"><b>Thin</b><span>Toolbars, tab bars</span></div>
+    <div class="pane q-material q-material--regular"><b>Regular</b><span>Nav bars, sidebars</span></div>
+    <div class="pane q-material q-material--thick"><b>Thick</b><span>Sheets, panels</span></div>
+  </div>
+</div>
+  </div>
+</section>
+<section class="g-section" id="Button">
+  <div class="g-head"><h2>Button</h2><a class="q-link" href="../docs/components/Button.md">Guidelines</a></div>
+  <p class="g-summary">Buttons trigger an action; use one primary per view and let the rest step down.</p>
+  <div class="g-demo">
+<div class="q-row">
+  <button class="q-btn q-btn--primary">Save</button>
+  <button class="q-btn q-btn--secondary">Share</button>
+  <button class="q-btn q-btn--plain">Cancel</button>
+  <button class="q-btn q-btn--danger">Delete</button>
+  <button class="q-btn q-btn--primary" disabled>Save</button>
+</div>
+  </div>
+</section>
+<section class="g-section" id="TextField">
+  <div class="g-head"><h2>TextField</h2><a class="q-link" href="../docs/components/TextField.md">Guidelines</a></div>
+  <p class="g-summary">A filled input with a label above and an optional hint below.</p>
+  <div class="g-demo">
+<div class="q-stack">
+  <div class="q-field"><label for="a">Name</label><input id="a" class="q-input" placeholder="Your name"></div>
+  <div class="q-field"><label for="b">Email</label><input id="b" class="q-input" value="sanjeev@example" ><span class="q-hint">We only use this to sign you in.</span></div>
+  <div class="q-field q-field--error"><label for="c">Password</label><input id="c" class="q-input" type="password" value="abc"><span class="q-hint">Use at least 8 characters.</span></div>
+</div>
+  </div>
+</section>
+<section class="g-section" id="Toggle">
+  <div class="g-head"><h2>Toggle</h2><a class="q-link" href="../docs/components/Toggle.md">Guidelines</a></div>
+  <p class="g-summary">A switch for settings that take effect immediately.</p>
+  <div class="g-demo">
+<div class="q-row">
+  <label class="q-toggle" aria-label="Off example"><input type="checkbox"><span></span></label>
+  <label class="q-toggle" aria-label="On example"><input type="checkbox" checked><span></span></label>
+</div>
+  </div>
+</section>
+<section class="g-section" id="SegmentedControl">
+  <div class="g-head"><h2>SegmentedControl</h2><a class="q-link" href="../docs/components/SegmentedControl.md">Guidelines</a></div>
+  <p class="g-summary">Switches between two to five mutually exclusive views of the same content.</p>
+  <div class="g-demo">
+<div class="q-row">
+  <div class="q-seg" role="group" aria-label="Range">
+    <button aria-pressed="false">Day</button><button aria-pressed="true">Week</button><button aria-pressed="false">Month</button>
+  </div>
+</div>
+  </div>
+</section>
+<section class="g-section" id="ListGroup">
+  <div class="g-head"><h2>ListGroup</h2><a class="q-link" href="../docs/components/ListGroup.md">Guidelines</a></div>
+  <p class="g-summary">The workhorse layout: rows grouped on a rounded `surface` card, with an optional header and footer.</p>
+  <div class="g-demo">
+<div style="padding:16px">
+<div class="q-group">
+  <div class="q-group__header">Account</div>
+  <ul class="q-list">
+    <li>Profile<span class="q-detail">Sanjeev</span><span class="q-chevron">›</span></li>
+    <li>Notifications<label class="q-toggle" style="margin-left:auto" aria-label="Notifications"><input type="checkbox" checked><span></span></label></li>
+    <li class="is-selected">Appearance<span class="q-detail" style="color:inherit">System</span></li>
+    <li>Storage<span class="q-detail">2.1 GB</span><span class="q-chevron">›</span></li>
+  </ul>
+  <div class="q-group__footer">Changes save automatically.</div>
+</div>
+</div>
+  </div>
+</section>
+<section class="g-section" id="SiteHeader">
+  <div class="g-head"><h2>SiteHeader</h2><a class="q-link" href="../docs/components/SiteHeader.md">Guidelines</a></div>
+  <p class="g-summary">The site's top bar: your name on the left, a few navigation links on the right, on `material-regular` so content blurs underneath as it scrolls.</p>
+  <div class="g-demo">
+<div style="height:150px;overflow:hidden;position:relative">
+<div style="position:absolute;top:28px;left:0;right:0;display:flex;gap:12px;padding:0 120px">
+  <div style="width:180px;height:100px;border-radius:12px;background:var(--system-orange)"></div>
+  <div style="width:180px;height:100px;border-radius:12px;background:var(--system-teal)"></div>
+  <div style="width:180px;height:100px;border-radius:12px;background:var(--system-purple)"></div>
+</div>
+<header class="q-header q-material q-material--regular">
+  <div class="q-header__inner">
+    <a class="q-header__name" href="#">Sanjeev</a>
+    <nav class="q-nav" aria-label="Main"><a href="#" aria-current="page">Writing</a><a href="#">Projects</a><a href="#">About</a></nav>
+  </div>
+</header>
+</div>
+  </div>
+</section>
+<section class="g-section" id="SiteFooter">
+  <div class="g-head"><h2>SiteFooter</h2><a class="q-link" href="../docs/components/SiteFooter.md">Guidelines</a></div>
+  <p class="g-summary">The bottom of every page: copyright on one side, a few secondary links on the other.</p>
+  <div class="g-demo">
+<div style="padding-top:24px"><footer class="q-footer"><div class="q-footer__inner">
+  <span>© 2026 Sanjeev</span>
+  <nav aria-label="Footer"><a href="#">RSS</a><a href="#">GitHub</a><a href="#">Email</a><a href="#">Colophon</a></nav>
+</div></footer></div>
+  </div>
+</section>
+<section class="g-section" id="ArticleHeader">
+  <div class="g-head"><h2>ArticleHeader</h2><a class="q-link" href="../docs/components/ArticleHeader.md">Guidelines</a></div>
+  <p class="g-summary">The top of a post: a tag, the title, a one-sentence dek and a byline row.</p>
+  <div class="g-demo">
+<div class="q-measure"><header class="q-article-header" style="padding-block:32px">
+  <div class="q-tags"><a class="q-tag" style="--tag:var(--system-indigo)" href="#">Design</a></div>
+  <h1>Notes on building quietly</h1>
+  <p class="q-dek">What I learned designing a small system for my own projects, and why fewer choices made it better.</p>
+  <div class="q-meta"><span class="q-avatar">S</span><b>Sanjeev</b><span>Oct 15, 2026</span><span>6 min read</span></div>
+</header></div>
+  </div>
+</section>
+<section class="g-section" id="Prose">
+  <div class="g-head"><h2>Prose</h2><a class="q-link" href="../docs/components/Prose.md">Guidelines</a></div>
+  <p class="g-summary">The long-form reading styles: wrap a post's rendered HTML (Markdown output works as-is) in `.q-prose` inside `.q-measure`.</p>
+  <div class="g-demo">
+<div class="q-measure" style="padding-block:16px"><div class="q-prose">
+<p>Most design systems start big and get pruned. This one went the other way: a handful of tokens, a <a href="#">few components</a>, and a rule that anything new has to earn its place.</p>
+<h2>Why fewer tokens</h2>
+<p>Every token is a decision someone has to make later. With <code>surface</code>, <code>surface-sunken</code> and <code>surface-raised</code>, there are only three answers to “what goes behind this?”</p>
+<ul><li>One accent for anything you can act on.</li><li>System colours for identity, never for buttons.</li><li>Materials only for things that float.</li></ul>
+<blockquote>Simplicity is not the absence of clutter; it's the presence of clear decisions.<cite>— A note to myself</cite></blockquote>
+<h3>A smaller point</h3>
+<p>Line length matters more than font choice. Keep the column near <strong>680px</strong> and most faces read well.</p>
+<hr>
+</div></div>
+  </div>
+</section>
+<section class="g-section" id="CodeBlock">
+  <div class="g-head"><h2>CodeBlock</h2><a class="q-link" href="../docs/components/CodeBlock.md">Guidelines</a></div>
+  <p class="g-summary">A code sample with an optional filename bar and a copy button.</p>
+  <div class="g-demo">
+<div class="q-measure" style="padding-block:16px"><div class="q-codeblock">
+  <div class="q-codeblock__bar"><span>tokens.js</span><button type="button">Copy</button></div>
+<pre><code><span class="c">// Read a token from CSS</span>
+<span class="k">const</span> accent = getComputedStyle(document.documentElement)
+  .getPropertyValue(<span class="s">'--accent'</span>);
+<span class="k">export const</span> radius = <span class="n">12</span>;</code></pre>
+</div></div>
+  </div>
+</section>
+<section class="g-section" id="Figure">
+  <div class="g-head"><h2>Figure</h2><a class="q-link" href="../docs/components/Figure.md">Guidelines</a></div>
+  <p class="g-summary">An image (or video, or embed) with a short caption.</p>
+  <div class="g-demo">
+<div class="q-measure" style="padding-block:16px"><figure class="q-figure">
+  <svg class="q-figure__media" viewBox="0 0 680 260" preserveAspectRatio="xMidYMid slice" style="height:240px"><rect width="680" height="260" style="fill:var(--surface-sunken)"/><circle cx="250" cy="150" r="80" style="fill:var(--system-mint)"/><rect x="340" y="70" width="140" height="140" rx="28" style="fill:var(--system-blue)"/></svg>
+  <figcaption>The layout grid, with the reading column highlighted.</figcaption>
+</figure></div>
+  </div>
+</section>
+<section class="g-section" id="Callout">
+  <div class="g-head"><h2>Callout</h2><a class="q-link" href="../docs/components/Callout.md">Guidelines</a></div>
+  <p class="g-summary">An aside inside an article for a tip, note or warning that the reader shouldn't miss.</p>
+  <div class="g-demo">
+<div class="q-measure" style="padding-block:16px;display:flex;flex-direction:column;gap:12px">
+  <aside class="q-callout"><span class="q-callout__icon">i</span><div><b>Note.</b> All tokens have light and dark values; you never need to write a dark-mode override by hand.</div></aside>
+  <aside class="q-callout q-callout--warning"><span class="q-callout__icon">!</span><div><b>Heads up.</b> Backdrop blur is GPU work. Don't put materials on large animated areas.</div></aside>
+</div>
+  </div>
+</section>
+<section class="g-section" id="TableOfContents">
+  <div class="g-head"><h2>TableOfContents</h2><a class="q-link" href="../docs/components/TableOfContents.md">Guidelines</a></div>
+  <p class="g-summary">"On this page" navigation for long posts, shown in a sticky side column on wide screens and above the body (or hidden) on phones.</p>
+  <div class="g-demo">
+<div style="padding:16px;max-width:240px"><nav class="q-toc" aria-label="On this page"><p>On this page</p><ol>
+  <li><a href="#">Why fewer tokens</a></li>
+  <li><a href="#" aria-current="true">Colour</a></li>
+  <li class="q-toc__sub"><a href="#">System colours</a></li>
+  <li><a href="#">Typography</a></li>
+  <li><a href="#">What I'd change</a></li>
+</ol></nav></div>
+  </div>
+</section>
+<section class="g-section" id="Tag">
+  <div class="g-head"><h2>Tag</h2><a class="q-link" href="../docs/components/Tag.md">Guidelines</a></div>
+  <p class="g-summary">A topic label: a pill tinted from one system colour, with a full-strength dot and ink text.</p>
+  <div class="g-demo">
+<div class="q-row"><div class="q-tags">
+  <a class="q-tag" style="--tag:var(--system-indigo)" href="#">Design</a>
+  <a class="q-tag" style="--tag:var(--system-orange)" href="#">Cycling</a>
+  <a class="q-tag" style="--tag:var(--system-green)" href="#">Projects</a>
+  <a class="q-tag" style="--tag:var(--system-pink)" href="#">Notes</a>
+  <a class="q-tag" style="--tag:var(--system-teal)" href="#">Engineering</a>
+</div></div>
+  </div>
+</section>
+<section class="g-section" id="PostCard">
+  <div class="g-head"><h2>PostCard</h2><a class="q-link" href="../docs/components/PostCard.md">Guidelines</a></div>
+  <p class="g-summary">A post teaser for home pages and topic pages, laid out in a responsive `q-cards` grid.</p>
+  <div class="g-demo">
+<div style="padding:16px"><div class="q-cards">
+  <a class="q-card" href="#"><svg class="q-card__media" viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" style="display:block;width:100%"><rect width="320" height="180" style="fill:var(--surface-sunken)"/><circle cx="110" cy="110" r="56" style="fill:var(--system-orange)"/><rect x="170" y="40" width="96" height="96" rx="20" style="fill:var(--system-yellow)"/></svg><div class="q-card__body"><div class="q-tags"><span class="q-tag" style="--tag:var(--system-orange)">Cycling</span></div><h3 class="q-card__title">A winter of gravel rides</h3><p class="q-card__excerpt">What I changed to keep riding through the rain.</p><span class="q-card__meta">Oct 2 · 5 min</span></div></a>
+  <a class="q-card" href="#"><svg class="q-card__media" viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" style="display:block;width:100%"><rect width="320" height="180" style="fill:var(--surface-sunken)"/><circle cx="200" cy="110" r="56" style="fill:var(--system-indigo)"/><rect x="60" y="40" width="96" height="96" rx="20" style="fill:var(--system-purple)"/></svg><div class="q-card__body"><div class="q-tags"><span class="q-tag" style="--tag:var(--system-indigo)">Design</span></div><h3 class="q-card__title">Notes on building quietly</h3><p class="q-card__excerpt">Designing a small system for my own projects.</p><span class="q-card__meta">Oct 15 · 6 min</span></div></a>
+  <a class="q-card" href="#"><svg class="q-card__media" viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" style="display:block;width:100%"><rect width="320" height="180" style="fill:var(--surface-sunken)"/><circle cx="90" cy="110" r="56" style="fill:var(--system-green)"/><rect x="180" y="40" width="96" height="96" rx="20" style="fill:var(--system-mint)"/></svg><div class="q-card__body"><div class="q-tags"><span class="q-tag" style="--tag:var(--system-green)">Projects</span></div><h3 class="q-card__title">Weekend build: a tiny CLI</h3><p class="q-card__excerpt">Two days, one script, and a lot of yak shaving.</p><span class="q-card__meta">Sep 20 · 4 min</span></div></a>
+</div></div>
+  </div>
+</section>
+<section class="g-section" id="PostList">
+  <div class="g-head"><h2>PostList</h2><a class="q-link" href="../docs/components/PostList.md">Guidelines</a></div>
+  <p class="g-summary">The dense alternative to cards: one row per post, for archives, "all writing" pages and year groupings.</p>
+  <div class="g-demo">
+<div class="q-measure" style="padding-block:16px"><ul class="q-postlist">
+  <li><a href="#"><span class="q-postlist__title">Notes on building quietly</span><span class="q-postlist__date">Oct 15</span><span class="q-postlist__excerpt">Designing a small system for my own projects.</span></a></li>
+  <li><a href="#"><span class="q-postlist__title">A winter of gravel rides</span><span class="q-postlist__date">Oct 2</span><span class="q-postlist__excerpt">What I changed to keep riding through the rain.</span></a></li>
+  <li><a href="#"><span class="q-postlist__title">Weekend build: a tiny CLI</span><span class="q-postlist__date">Sep 20</span><span class="q-postlist__excerpt">Two days, one script, and a lot of yak shaving.</span></a></li>
+</ul></div>
+  </div>
+</section>
+<section class="g-section" id="AuthorBio">
+  <div class="g-head"><h2>AuthorBio</h2><a class="q-link" href="../docs/components/AuthorBio.md">Guidelines</a></div>
+  <p class="g-summary">A short "who wrote this" card for the end of a post or the about page.</p>
+  <div class="g-demo">
+<div class="q-measure" style="padding-block:16px"><div class="q-author">
+  <span class="q-avatar">S</span>
+  <div><p class="q-author__name">Sanjeev</p><p class="q-author__bio">I build software, ride bikes around Portland, and write here about design, engineering and the things I make.</p>
+  <div class="q-author__links"><a href="#">About</a><a href="#">RSS</a><a href="#">Email</a></div></div>
+</div></div>
+  </div>
+</section>
+<section class="g-section" id="PrevNext">
+  <div class="g-head"><h2>PrevNext</h2><a class="q-link" href="../docs/components/PrevNext.md">Guidelines</a></div>
+  <p class="g-summary">Links to the previous and next posts at the bottom of an article.</p>
+  <div class="g-demo">
+<div class="q-measure" style="padding-block:16px"><nav class="q-prevnext" aria-label="More posts">
+  <a href="#"><small>← Previous</small><b>A winter of gravel rides</b></a>
+  <a href="#"><small>Next →</small><b>Weekend build: a tiny CLI</b></a>
+</nav></div>
+  </div>
+</section>
+<section class="g-section" id="Newsletter">
+  <div class="g-head"><h2>Newsletter</h2><a class="q-link" href="../docs/components/Newsletter.md">Guidelines</a></div>
+  <p class="g-summary">A subscribe block for the end of posts or the home page: heading, one honest sentence, email field and a primary button.</p>
+  <div class="g-demo">
+<div class="q-measure" style="padding-block:16px"><section class="q-newsletter">
+  <h3>Get new posts by email</h3>
+  <p>One email when something new goes up. No tracking, unsubscribe anytime.</p>
+  <form onsubmit="return false"><input class="q-input" type="email" placeholder="you@example.com" aria-label="Email address"><button class="q-btn q-btn--primary">Subscribe</button></form>
+</section></div>
+  </div>
+</section>
+  </main>
+</div>
+<script>
+  (function () {
+    var root = document.documentElement, buttons = document.querySelectorAll('#theme button');
+    function apply(v) {
+      if (v) root.setAttribute('data-theme', v); else root.removeAttribute('data-theme');
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.set === v)); });
+      try { localStorage.setItem('quiet-theme', v); } catch (e) {}
+    }
+    buttons.forEach(function (b) { b.addEventListener('click', function () { apply(b.dataset.set); }); });
+    var saved = ''; try { saved = localStorage.getItem('quiet-theme') || ''; } catch (e) {}
+    apply(saved);
+  })();
+</script>
+</body>
+</html>

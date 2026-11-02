@@ -1,0 +1,2 @@
+/* Quiet — base page styles. Optional: sets the page background, text colour and font. */
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }

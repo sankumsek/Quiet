@@ -1,0 +1,47 @@
+{
+  "name": "quiet-design-system",
+  "version": "1.0.0",
+  "description": "Quiet: a calm, Apple-inspired design system for personal sites and blogs. Tokens, CSS components, light and dark themes.",
+  "license": "BSD-3-Clause",
+  "author": "Sanjeev Sekar",
+  "type": "module",
+  "main": "dist/tokens.js",
+  "types": "dist/tokens.d.ts",
+  "style": "dist/quiet.css",
+  "exports": {
+    ".": {
+      "types": "./dist/tokens.d.ts",
+      "default": "./dist/tokens.js"
+    },
+    "./quiet.css": "./dist/quiet.css",
+    "./tokens.css": "./dist/tokens.css",
+    "./type.css": "./dist/type.css",
+    "./components.css": "./dist/components.css",
+    "./tokens.json": "./tokens/tokens.json"
+  },
+  "files": [
+    "dist",
+    "tokens",
+    "docs"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check-contrast.mjs",
+    "preview": "npx --yes serve ."
+  },
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "css",
+    "blog",
+    "dark-mode"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sankumsek/Quiet.git"
+  },
+  "homepage": "https://github.com/sankumsek/Quiet#readme"
+}

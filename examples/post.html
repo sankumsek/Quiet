@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notes on building quietly — example post</title>
+<link rel="stylesheet" href="../dist/quiet.css">
+</head>
+<body>
+<header class="q-header q-material q-material--regular">
+    <div class="q-header__inner">
+      <a class="q-header__name" href="#">Sanjeev</a>
+      <nav class="q-nav" aria-label="Main"><a href="#" aria-current="page">Writing</a><a href="#">Projects</a><a href="#">About</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="q-measure">
+      <header class="q-article-header">
+        <div class="q-tags"><a class="q-tag" style="--tag: var(--system-indigo);" href="#">Design</a></div>
+        <h1>Notes on building quietly</h1>
+        <p class="q-dek">What I learned designing a small system for my own projects, and why fewer choices made it better.</p>
+        <div class="q-meta"><span class="q-avatar">S</span><b>Sanjeev</b><span>Nov 1, 2026</span><span>6 min read</span></div>
+      </header>
+
+      <div class="q-prose">
+        <p>Most design systems start big and get pruned. This one went the other way: a handful of tokens, a <a href="#">few components</a>, and a rule that anything new has to earn its place.</p>
+        <h2>Why fewer tokens</h2>
+        <p>Every token is a decision someone has to make later. With <code>surface</code>, <code>surface-sunken</code> and <code>surface-raised</code>, there are only three answers to “what goes behind this?”</p>
+        <ul>
+          <li>One accent for anything you can act on.</li>
+          <li>System colours for identity, never for buttons.</li>
+          <li>Materials only for things that float.</li>
+        </ul>
+        <div class="q-codeblock">
+          <div class="q-codeblock__bar"><span>tokens.js</span><button type="button">Copy</button></div>
+          <pre><code><span class="c">// Read a token from CSS</span>
+<span class="k">const</span> accent = getComputedStyle(document.documentElement)
+  .getPropertyValue(<span class="s">'--accent'</span>);
+<span class="k">export const</span> radius = <span class="n">12</span>;</code></pre>
+        </div>
+        <blockquote>Simplicity is not the absence of clutter; it’s the presence of clear decisions.<cite>— A note to myself</cite></blockquote>
+        <aside class="q-callout"><span class="q-callout__icon">i</span><div><b>Note.</b> Every token has light and dark values, so dark mode needs no extra work.</div></aside>
+        <h3>A smaller point</h3>
+        <p>Line length matters more than font choice. Keep the column near <strong>680px</strong> and most faces read well.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 32px; padding-block: 16px 64px;">
+        <div class="q-author">
+          <span class="q-avatar">S</span>
+          <div>
+            <p class="q-author__name">Sanjeev</p>
+            <p class="q-author__bio">I build software, ride bikes around Portland, and write here about design, engineering and the things I make.</p>
+            <div class="q-author__links"><a href="#">About</a><a href="#">RSS</a><a href="#">Email</a></div>
+          </div>
+        </div>
+        <nav class="q-prevnext" aria-label="More posts">
+          <a href="#"><small>← Previous</small><b>A winter of gravel rides</b></a>
+          <a href="#"><small>Next →</small><b>Weekend build: a tiny CLI</b></a>
+        </nav>
+        <section class="q-newsletter">
+          <h3>Get new posts by email</h3>
+          <p>One email when something new goes up. No tracking, unsubscribe anytime.</p>
+          <form style="display: flex; flex-wrap: wrap; gap: 8px; width: 100%; max-width: 420px;">
+            <input class="q-input" type="email" placeholder="you@example.com" aria-label="Email address" style="flex: 1 1 200px; min-width: 0;">
+            <button class="q-btn q-btn--primary" type="button">Subscribe</button>
+          </form>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <footer class="q-footer">
+    <div class="q-footer__inner">
+      <span>© 2026 Sanjeev</span>
+      <nav aria-label="Footer"><a href="#">RSS</a><a href="#">GitHub</a><a href="#">Email</a></nav>
+    </div>
+  </footer>
+</body>
+</html>

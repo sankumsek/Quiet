@@ -1,0 +1,138 @@
+/*! Quiet design system v1.0.0 — generated from tokens/tokens.json. Do not edit by hand. */
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #fbfbfa;
+  --surface: #ffffff;
+  --surface-sunken: #ececea;
+  --surface-raised: #ffffff;
+  --separator: #e6e6e4;
+  --control-border: #8e8e96;
+  --ink: #161618;
+  --ink-secondary: #5e5e66;
+  --ink-tertiary: #64646c;
+  --accent: #2a62cf;
+  --on-accent: #ffffff;
+  --accent-soft: #e9effb;
+  --success: #17763f;
+  --warning: #9a5b00;
+  --danger: #d1352b;
+  --system-red: #ff3b30;
+  --system-orange: #ff9500;
+  --system-yellow: #ffcc00;
+  --system-green: #34c759;
+  --system-mint: #00c7be;
+  --system-teal: #30b0c7;
+  --system-cyan: #32ade6;
+  --system-blue: #007aff;
+  --system-indigo: #5856d6;
+  --system-purple: #af52de;
+  --system-pink: #ff2d55;
+  --system-brown: #a2845e;
+  --material-ultrathin: rgba(250,250,250,0.55);
+  --material-thin: rgba(250,250,250,0.7);
+  --material-regular: rgba(250,250,250,0.8);
+  --material-thick: rgba(250,250,250,0.9);
+  --shadow-1: 0 1px 3px rgba(0,0,0,0.10), 0 1px 1px rgba(0,0,0,0.05);
+  --shadow-2: 0 8px 24px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0e0e10;
+  --surface: #1a1a1d;
+  --surface-sunken: #202024;
+  --surface-raised: #3a3a40;
+  --separator: #2c2c31;
+  --control-border: #6a6a73;
+  --ink: #f4f4f5;
+  --ink-secondary: #a1a1aa;
+  --ink-tertiary: #8c8c94;
+  --accent: #5b8ef0;
+  --on-accent: #0b1220;
+  --accent-soft: #1a2438;
+  --success: #3fbf72;
+  --warning: #f0a640;
+  --danger: #ff6b61;
+  --system-red: #ff453a;
+  --system-orange: #ff9f0a;
+  --system-yellow: #ffd60a;
+  --system-green: #30d158;
+  --system-mint: #63e6e2;
+  --system-teal: #40cbe0;
+  --system-cyan: #64d2ff;
+  --system-blue: #0a84ff;
+  --system-indigo: #5e5ce6;
+  --system-purple: #bf5af2;
+  --system-pink: #ff375f;
+  --system-brown: #ac8e68;
+  --material-ultrathin: rgba(28,28,31,0.58);
+  --material-thin: rgba(28,28,31,0.7);
+  --material-regular: rgba(28,28,31,0.8);
+  --material-thick: rgba(28,28,31,0.9);
+  --shadow-1: 0 0 0 1px rgba(255,255,255,0.06);
+  --shadow-2: 0 8px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.08);
+}
+
+/* Follow the OS setting unless a data-theme is set. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0e0e10;
+    --surface: #1a1a1d;
+    --surface-sunken: #202024;
+    --surface-raised: #3a3a40;
+    --separator: #2c2c31;
+    --control-border: #6a6a73;
+    --ink: #f4f4f5;
+    --ink-secondary: #a1a1aa;
+    --ink-tertiary: #8c8c94;
+    --accent: #5b8ef0;
+    --on-accent: #0b1220;
+    --accent-soft: #1a2438;
+    --success: #3fbf72;
+    --warning: #f0a640;
+    --danger: #ff6b61;
+    --system-red: #ff453a;
+    --system-orange: #ff9f0a;
+    --system-yellow: #ffd60a;
+    --system-green: #30d158;
+    --system-mint: #63e6e2;
+    --system-teal: #40cbe0;
+    --system-cyan: #64d2ff;
+    --system-blue: #0a84ff;
+    --system-indigo: #5e5ce6;
+    --system-purple: #bf5af2;
+    --system-pink: #ff375f;
+    --system-brown: #ac8e68;
+    --material-ultrathin: rgba(28,28,31,0.58);
+    --material-thin: rgba(28,28,31,0.7);
+    --material-regular: rgba(28,28,31,0.8);
+    --material-thick: rgba(28,28,31,0.9);
+    --shadow-1: 0 0 0 1px rgba(255,255,255,0.06);
+    --shadow-2: 0 8px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.08);
+  }
+}
+
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 999px;
+  --blur-sm: 12px;
+  --blur-md: 24px;
+  --blur-lg: 40px;
+  --width-measure: 680px;
+  --width-wide: 1080px;
+  --height-header: 56px;
+  --font-sans: system-ui, -apple-system, "Inter", "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
+}
